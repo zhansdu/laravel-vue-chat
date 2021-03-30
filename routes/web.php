@@ -19,13 +19,10 @@ Route::group(['prefix' => 'admin'], static function () {
 });
 
 Route::group(['prefix' => ''], static function () {
-	Route::get('/chat', 'ChatController@index');
 	Route::get('/chat/send-message', 'ChatController@send');
 
 	Auth::routes();
 
-	Route::get('/home', 'HomeController@index')->name('home');
-	
     Route::get('{any}', static function () {
         return view('user');
     })->where('any', '.*')->name('user');
