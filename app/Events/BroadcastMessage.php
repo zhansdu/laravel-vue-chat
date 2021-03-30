@@ -10,7 +10,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class TestEvent implements ShouldBroadcast
+class BroadcastMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -35,6 +35,6 @@ class TestEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['news-action'];
+        return ['chat'];
     }
 }

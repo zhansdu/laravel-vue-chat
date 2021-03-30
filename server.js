@@ -12,7 +12,7 @@ var io = require('socket.io')(server,
 var Redis = require('ioredis');
 var redis = new Redis();
 
-redis.subscribe('news-action');
+redis.subscribe('chat');
 
 redis.on('message', function(channel, message) {
   console.log('Message recieved: ' + message);

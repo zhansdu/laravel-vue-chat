@@ -50,11 +50,9 @@
             socket.on('userCount', function (data) {
                 this.users = data.userCount;
             }.bind(this));
-            socket.on("news-action:App\\Events\\TestEvent", function(data){
-                console.log('me');
+            socket.on("chat:App\\Events\\BroadcastMessage", function(data){
                 this.dataMessages.push(data.nickname + ' : ' + data.message);
             }.bind(this));
-
         }
     }
 </script>

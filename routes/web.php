@@ -19,8 +19,6 @@ Route::group(['prefix' => 'admin'], static function () {
 });
 
 Route::group(['prefix' => ''], static function () {
-	Route::get('/chat/send-message', 'ChatController@send');
-
 	Auth::routes();
 
     Route::get('{any}', static function () {
