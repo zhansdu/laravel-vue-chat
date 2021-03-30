@@ -1,26 +1,50 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-  },
-  "devDependencies": {
-    "axios": "^0.21.1",
-    "bootstrap": "^4.0.0",
-    "cross-env": "^5.2.0",
-    "jquery": "^3.2",
-    "laravel-mix": "^6.0.13",
-    "lodash": "^4.17.5",
-    "popper.js": "^1.12",
-    "vue": "^2.5.7"
-  },
-  "dependencies": {
-    "ioredis": "^4.2.0",
-    "socket.io": "^2.1.1"
-  }
+    "private": true,
+    "scripts": {
+        "node:server": "nodemon server.js",
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "bootstrap": "^4.6.0",
+        "cross-env": "^7.0.3",
+        "deepmerge": "^4.2.2",
+        "fibers": "^5.0.0",
+        "jquery": "^3.2",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.20",
+        "popper.js": "^1.12",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.32.6",
+        "sass-loader": "^11.0.1",
+        "vue": "2.6.11",
+        "vue-loader": "^15.9.6",
+        "vue-template-compiler": "2.6.11"
+    },
+    "dependencies": {
+        "chart.js": "^2.9.4",
+        "chartjs-plugin-datalabels": "^0.7.0",
+        "chartjs-plugin-labels": "^1.1.0",
+        "epic-spinners": "^1.1.0",
+        "ioredis": "^4.24.4",
+        "laravel-echo": "^1.10.0",
+        "nodemon": "^2.0.7",
+        "pusher-js": "^7.0.3",
+        "socket.io": "^4.0.0",
+        "socket.io-client": "^4.0.0",
+        "vue-chartjs": "^3.5.1",
+        "vue-i18n": "^8.22.2",
+        "vue-js-modal": "^2.0.0-rc.6",
+        "vue-router": "^3.4.9",
+        "vue-simple-alert": "^1.1.1",
+        "vue-spinner": "^1.0.4",
+        "vuex": "^3.6.0"
+    }
 }

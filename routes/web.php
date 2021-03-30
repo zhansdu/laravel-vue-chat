@@ -11,13 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::group(['prefix' => 'admin'], static function () {
+    Route::get('{any?}', static function () {
+        return view('admin');
+    })->where('any', '.*')->name('admin');
 });
 
-Route::get('/chat', 'ChatController@index');
-Route::get('/chat/send-message', 'ChatController@send');
+Route::group(['prefix' => ''], static function () {
+	Route::get('/chat', 'ChatController@index');
+	Route::get('/chat/send-message', 'ChatController@send');
 
-Auth::routes();
+	Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/home', 'HomeController@index')->name('home');
+	
+    Route::get('{any}', static function () {
+        return view('user');
+    })->where('any', '.*')->name('user');
+});
